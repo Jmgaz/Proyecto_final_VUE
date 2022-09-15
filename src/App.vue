@@ -1,17 +1,37 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="d-flex mt-0">
+    <NavBar />
+    <div class="container">
+      <div class="row">
+        <ProductsCards
+          v-for="product in products"
+          :key="product.id"
+          :product="product"/>
+      </div>
+
+
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import NavBar from './components/NavBar.vue'
+import ProductsCards from './components/ProductsCards.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    NavBar, ProductsCards
+  },
+  data(){
+    return{
+      products:[
+        { id: 1, name: 'Combo 10', cantidad: 10, precio: 1200, img: "./img/Combo_10.jpg"},
+        { id: 2, name: 'Combo 20', cantidad: 20, precio: 2200, img: "./img/Combo_20.jpg"},
+        { id: 3, name: 'Combo 30', cantidad: 30, precio: 3200, img: "./img/Combo_30.jpg"}
+      ]
+    }
   }
 }
 </script>
