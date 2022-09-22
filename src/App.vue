@@ -8,7 +8,7 @@
 				</h1>
 			</div>
 			<div v-if="page == 'login'">
-				<LoginForm class="col-12" />
+				<VueForm class="col-12" />
 			</div>
       <div v-if="page == 'home'" class="row m-0 relative">
 				<span class="total-price bg-success py-2 px-4">
@@ -35,14 +35,14 @@
 
 <script>
 import NavBar from "./components/NavBar.vue";
-import LoginForm from "./components/LoginForm.vue";
+import VueForm from "./components/VueForm.vue";
 import ProductsCard from "./components/ProductsCard.vue";
 export default {
 	name: "App",
 	components: {
 		ProductsCard,
 		NavBar,
-		LoginForm,
+		VueForm,
 	},
 	data() {
 		return {
